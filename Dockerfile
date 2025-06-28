@@ -37,10 +37,7 @@ EXPOSE 8888
 # Switch back to root to run chmod
 USER root
 
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
-
-# Switch to kedro user to run the script (optional but recommended)
+# Switch to kedro user to run the script 
 USER kedro_docker
 
-CMD ["/app/start.sh"]
+CMD ["kedro", "run"]

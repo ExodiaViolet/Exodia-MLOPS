@@ -14,7 +14,8 @@ from mlops_project.pipelines import (
     validation_split as val_split,
     model_training as model_training,
     model_selection as model_selection,
-    final_prediction as final_prediction
+    final_prediction as final_prediction,
+    drift_simulation as drift
 )
 
 def register_pipelines() -> Dict[str, Pipeline]:
@@ -31,6 +32,8 @@ def register_pipelines() -> Dict[str, Pipeline]:
     model_training_pipeline = model_training.create_pipeline()
     model_selection_pipeline = model_selection.create_pipeline()
     final_prediction_pipeline = final_prediction.create_pipeline()
+    drift_simulation_pipeline = drift.create_pipeline()
+
     full_pipeline = (
         data_ingestion_pipeline
         + data_unit_tests_pipeline
@@ -51,6 +54,7 @@ def register_pipelines() -> Dict[str, Pipeline]:
         "model_training": model_training_pipeline,
         "model_selection": model_selection_pipeline,
         "final_prediction": final_prediction_pipeline,
-        "__default__": full_pipeline
+        "__default__": full_pipeline,
+        "drift": drift_simulation_pipeline
 
     }

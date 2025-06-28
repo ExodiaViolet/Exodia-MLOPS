@@ -26,6 +26,10 @@ test_processed_data:
   type: pandas.CSVDataset
   filepath: data/03_primary/test_processed_data.csv
 
+test_drifted_data:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/test_drifted_data.csv
+
 X_train_data:
   type: pandas.CSVDataset
   filepath: data/05_model_input/X_train_data.csv
