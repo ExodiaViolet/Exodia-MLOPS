@@ -1,0 +1,31 @@
+target_column: "readmitted"
+to_feature_store: False
+test_fraction: 0.2
+random_state: 42
+run_name: "full_project"
+load_model: False
+use_feature_selection: False
+feature_selection: "rfe"
+model_name: "diabetes"
+mlflow_track: False
+scale_pos_weight: 7.96
+baseline_model_params:
+  n_estimators: 100
+  max_depth: 6
+  random_state: 42
+  scale_pos_weight: 7.96
+hyperparameters:
+  LogisticRegression:
+    class_weight: ['balanced']
+    penalty: ['l1', 'elasticnet']
+    C: [0.01, 0.1, 1, 10]            
+    solver: ['saga']               
+    l1_ratio: [0.0, 0.5, 1.0]        
+    max_iter: [100, 500, 1000]
+    random_state: [42]
+  XGBClassifier:
+    n_estimators: [100, 200, 300]
+    max_depth: [3, 5, 10]
+    learning_rate: [0.01, 0.1, 0.2]
+    random_state: [42]
+    scale_pos_weight: [7.96]

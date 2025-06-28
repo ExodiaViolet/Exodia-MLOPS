@@ -1,0 +1,75 @@
+diabetic_raw_data:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/diabetic_data.csv
+
+reporting_tests:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/reporting_tests.csv
+
+data_ingested:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/data_ingested.csv
+
+ref_data:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/ref_data.csv
+
+ana_data:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/ana_data.csv
+
+train_processed_data:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/train_processed_data.csv
+
+test_processed_data:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/test_processed_data.csv
+
+X_train_data:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/X_train_data.csv
+
+y_train_data:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_train_data.csv
+
+X_val_data:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/X_val_data.csv
+
+y_val_data:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_val_data.csv 
+
+best_columns:
+  type: json.JSONDataset
+  filepath: data/06_models/best_cols.json
+
+production_columns:
+  type: json.JSONDataset
+  filepath: data/06_models/production_cols.json
+
+production_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/production_model.pkl
+
+production_model_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/production_model_metrics.json
+
+output_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/shap_plot.png
+
+champion_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/champion_model.pkl
+
+df_with_predict:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/df_with_predict.csv
+
+predict_describe:
+  type: json.JSONDataset
+  filepath: data/07_model_output/predict_describe.json
